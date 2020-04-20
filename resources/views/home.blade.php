@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <div><a href="{{route('users.index')}}">Head over to admin area</div>
                 </div>
             </div>
         </div>
