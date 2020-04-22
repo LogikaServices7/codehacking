@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostsCreateRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Photo;
+use Illuminate\Support\Facades\Session;
 
 class AdminPostsController extends Controller
 {
@@ -44,10 +47,30 @@ class AdminPostsController extends Controller
     {
         //
 
+       $input = $request->all();
+
        $user = Auth::user();
 
-       $user->post
+       if($file = $request->file('photo_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+
+        }
+
+        $user->posts()->create($input);
+
+        Session::flash('created_posts','The post has been created successfully');
+
+        
+       return redirect('/admin/posts');   
     }
+
 
     /**
      * Display the specified resource.
