@@ -8,9 +8,18 @@
 <h1>Edit Post</h1>
 
 <div class="row">
+
+        <div class="col-sm-3">
+                
+                <img src="{{$post->photo->id}}" alt="" class="img-responsive">
+        </div>
+
+        <div class="col-sm-9">
 {!! Form::model($post, ['method'=>'PATCH', 'action'=>['AdminPostsController@update', $post->id],'files'=>true]) !!}
 
 {{csrf_field()}}
+
+
 
 <div class="form-group">
 
