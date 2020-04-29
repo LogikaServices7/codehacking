@@ -10,6 +10,12 @@
 
 @endif
 
+@if(Session::has('deleted_post'))
+
+  <p class="bg-danger">{{session('deleted_post')}}</p>
+
+@endif
+
 <!-- @if(Session::has('created_user'))
 
   <p class="bg-success">{{session('created_user')}}</p>
@@ -42,10 +48,10 @@
       <tr>
         <td>{{$post->id}}</td>
         <td><img height="50" src="{{$post->photo ? $post->photo->file : '/images/avatar.jpg'}}" alt=""></td>
-        <td>{{$post->user->name}}</td>
+        <td><a href="{{route('posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
         <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
         <td>{{$post->title}}</td>
-        <td>{{$post->body}}</td>
+        <td>{{str_limit($post->body,30)}}</td>
         <td>{{$post->created_at->diffForhumans()}}</td>
         <td>{{$post->updated_at->diffForhumans()}}</td>
        
