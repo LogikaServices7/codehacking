@@ -36,7 +36,25 @@ Route::group(['middleware'=>'admin'], function(){
 
 	Route::resource('admin/categories', 'AdminCategoriesController');
 
+	Route::resource('admin/media', 'AdminMediasController');
+
+	//A possible way to rename route incompleted
+	//Route::get('admin/media/upload', ['as'=>'admin.media.upload', 'uses'=>'AdminMediasController@store']);
+
 
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+

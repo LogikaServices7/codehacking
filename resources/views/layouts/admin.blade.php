@@ -179,11 +179,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/media">All Media</a>
+                                <a href="{{route('media.index')}}">All Media</a>
                             </li>
 
                             <li>
-                                <a href="">Upload Media</a>
+                                <a href="{{route('media.create')}}">Upload Media</a>
                             </li>
 
                         </ul>
@@ -341,7 +341,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Admin</h1>
-                
+
                 @yield('content')
             </div>
             <!-- /.col-lg-12 -->
@@ -359,15 +359,17 @@
 
 
 
-@yield('footer')
 
+@yield('scripts')
 
-      <script src="{{ asset('js/jquery.js')}}">     </script>  
+      <script src="{{ asset('js/jquery.js')}}">     </script>
       <script src="{{ asset('js/bootstrap.js')}}">  </script>
-      
+
       <script src="{{ asset('js/sb-admin-2.js')}}"> </script>
       <script src="{{ asset('js/metisMenu.js')}}">  </script>
       <script src="{{ asset('js/scripts.js')}}">    </script>
+
+
 
 
 </body>
