@@ -12,7 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                /*background-color: #fff;*/
+                background: url("../images/lmnoplogo.jpg")center/cover no-repeat fixed;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -59,7 +60,15 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-top: 75px;
+                color: red;
+            }
+
+            .sub{
+                margin-top: 200px;
+                text-align: center;
+                color: red;
+
             }
         </style>
     </head>
@@ -81,7 +90,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    ALSOLOMON.com
+                    <div class="sub"><h6>I'm here to help you SUCCEED...</h6></div>
                 </div>
 
                 <div class="links">

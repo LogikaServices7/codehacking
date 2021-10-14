@@ -11,6 +11,7 @@
 
     <title>Blog Post - Start Bootstrap Template</title>
 
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/blog-post.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css')}}">
@@ -167,7 +168,7 @@
       <script src="{{ asset('js/sb-admin-2.js')}}"> </script>
       <script src="{{ asset('js/metisMenu.js')}}">  </script>
       <script src="{{ asset('js/scripts.js')}}">    </script>
-
+@yield('scripts')
 </body>
 
 </html>
